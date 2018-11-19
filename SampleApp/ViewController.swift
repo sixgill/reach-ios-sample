@@ -15,9 +15,11 @@ import CoreMotion
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var apiKeyTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var dropDownPicker: UIPickerView!
     
+    @IBOutlet weak var sendToServerSwitch: UISwitch!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var startSDKButton: UIButton!
     
@@ -57,11 +59,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func startSDK(_ sender: UIButton) {
         
+        apiKeyTextField.resignFirstResponder()
         phoneNumberTextField.resignFirstResponder()
         
-        // Made mandatory to enter phone number as alias
-        guard let phone_number = phoneNumberTextField.text, phone_number.count > 0 else {
-            self.view.makeToast("Enter phone number")
+        // Made mandatory to enter api key
+        guard let apiKey = apiKeyTextField.text, apiKey.count > 0 else {
+            self.view.makeToast("Enter api key")
             return
         }
         
@@ -70,16 +73,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Configure Reach Config
         let config = SGSDKConfigManager();
         
-        let dict = ["phone_number": phone_number];
-        config.aliases = dict as? NSMutableDictionary;
+        if let phone_number = phoneNumberTextField.text, phone_number.count > 0 {
+            let dict = ["phone_number": phone_number];
+            config.aliases = dict as? NSMutableDictionary;
+        }
         
         config.ingressURL = Constants.urls[dropDownPicker.selectedRow(inComponent: 0)]
         
-        config.shouldSendDataToServer = false
+        config.shouldSendDataToServer = sendToServerSwitch.isOn
         
         // StartWithApiKey
         DispatchQueue.global(qos: .background).async {
-            SGSDK.sharedInstance()?.start(withAPIKey: "3360a86a37f9f397c34db3569e", andConfig: config, andSuccessHandler: {
+            SGSDK.sharedInstance()?.start(withAPIKey: apiKey, andConfig: config, andSuccessHandler: {
                 
                 // Enable SDK
                 SGSDK.enable(successHandler: {
