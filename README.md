@@ -86,9 +86,7 @@ func sensorUpdateSent(withData sensorData: Event!) {
 ```
 Do remember to unregister the listener to prevent memory leaks
 ```swift
-@IBAction func stopSDK(_ sender: UIBarButtonItem) {
-    SGSDK.register(forSensorUpdates: nil)
-}
+SGSDK.register(forSensorUpdates: nil)
 ```
 
 Finally to stop the SDK, you need to call `disable` method of SDK
