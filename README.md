@@ -96,7 +96,7 @@ SGSDK.disable()
 
 Reach SDK also provides you functionality to generate event on demand. 
 ```swift
-// forceSensorUpdate will generate the event on demand, any on demand generated event has toq be received in the SensorUpdateDelegate, described above in this readme
+// forceSensorUpdate will generate the event on demand, any on demand generated event has to be received in the SensorUpdateDelegate, described above in this readme
 SGSDK.forceSensorUpdate()
 ```
 
