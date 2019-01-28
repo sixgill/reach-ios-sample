@@ -5,30 +5,26 @@ PODS:
   - CocoaLumberjack/Default (3.4.2)
   - CocoaLumberjack/Extensions (3.4.2):
     - CocoaLumberjack/Default
-  - DropDown (2.3.12)
-  - SixgillSDK (1.2.8):
+  - SixgillSDK (1.2.16):
     - CocoaLumberjack
   - Toast-Swift (4.0.0)
 
 DEPENDENCIES:
-  - DropDown
-  - SixgillSDK (~> 1.2.8)
+  - SixgillSDK (~> 1.2.16)
   - Toast-Swift (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaLumberjack
-    - DropDown
     - Toast-Swift
   https://github.com/sixgill/SixgillPodSpecs.git:
     - SixgillSDK
 
 SPEC CHECKSUMS:
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
-  DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
-  SixgillSDK: 20d2b22f0e492dc408d9feaa689323765bb3c728
+  SixgillSDK: 4b75b2d4aa53e254b2c86d119ea15ffa0322a9ab
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: c25bd77be450e7872ca1f16096a20fe609e3f293
+PODFILE CHECKSUM: 92556066a62998e33f2e8bb84ed7332cd3b5fdd0
 
 COCOAPODS: 1.5.3

@@ -13,6 +13,7 @@
 #import "EventQueuePolicy.h"
 #import "SGIoTDevice.h"
 #import "SGSDKConfigManager.h"
+#import "SGRule.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -23,21 +24,19 @@
 
 +(instancetype)sharedInstance;
 
++(void) requestAlwaysPermission;
+
 -(void)startWithAPIKey:(NSString *)apiKey;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
+
++(void) setMotionActivityEnabled:(BOOL)enabled;
++(BOOL) motionActivityEnabled;
+
 +(void) disable;
-
-+(NSString *)deviceId;
-
-+(void) setIngressURL:(NSString *)urlString;
-
-// Last 2 Days worth of logs
-+(NSString *) logs;
-+(void) clearLogs;
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -45,38 +44,17 @@
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
-+(void) forceSensorUpdate;
++(NSString *)deviceId;
 
-+(void) requestAlwaysPermission;
-
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-+(BOOL) motionActivityEnabled;
-
-#pragma mark - IoT
-+(SGIoTDevice *) registerIoTDevice:(NSString *)deviceName
-                  andChannelAPIKey:(NSString *)channelAPIKey
-                           sensors:(NSArray *)sensors;
-
-// deprecated
-
-+(void) showTestLocalNotification;
-
-// Configs
-
-+(void) registerForLogUpdates:(id<SGLogDelegateProtocol>)delegate;
++(void) setIngressURL:(NSString *)urlString;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
 
-+(NSArray *) sensorUpdateHistory:(NSUInteger)capacity;
++(void) forceSensorUpdate;
 
++(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
-+(UIViewController *) inboxViewController;
-
-
-#pragma mark - IoT
-+(NSArray *) registeredIoTDevices;
-+(void) registerIoTDeviceName:(NSString *)deviceName;
-+(void) sendIoTDevice:(SGIoTDevice *)device data:(NSDictionary *)data;
++(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 #pragma mark - Core Data
 +(void) saveCoreDataContext;
