@@ -66,4 +66,9 @@ class EventsTableViewController: UIViewController,UITableViewDelegate, UITableVi
         
         self.navigationController?.popViewController(animated: false)
     }
+    
+    @IBAction func forceSensorUpdateTapped(_ sender: UIButton) {
+        SGSDK.forceSensorUpdate()
+    }
+    
 }

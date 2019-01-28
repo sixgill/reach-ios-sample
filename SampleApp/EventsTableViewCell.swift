@@ -14,6 +14,7 @@ class EventsTableViewCell: UITableViewCell {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     func configureCell(sensorData: Event) {
         
@@ -29,6 +30,8 @@ class EventsTableViewCell: UITableViewCell {
         if let location = sensorData.locationsArray.firstObject as? Location {
             locationLabel.text = String(describing: location.latitude) + ", " + String(describing: location.longitude)
         }
+        
+        errorLabel.text = String(sensorData.errorArray.count)
     }
 
 }
