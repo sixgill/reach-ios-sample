@@ -32,27 +32,18 @@
 
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
-<<<<<<< HEAD
-=======
-
-+(void) disable;
->>>>>>> origin/master
 
 +(void) setMotionActivityEnabled:(BOOL)enabled;
 +(BOOL) motionActivityEnabled;
 
-<<<<<<< HEAD
 +(void) disable;
 
-=======
->>>>>>> origin/master
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
-<<<<<<< HEAD
 +(NSString *)deviceId;
 
 +(void) setIngressURL:(NSString *)urlString;
@@ -65,19 +56,6 @@
 
 +(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
-=======
-+(void) forceSensorUpdate;
-
-+(void) requestAlwaysPermission;
-
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-+(BOOL) motionActivityEnabled;
-
-// Configs
-
-+(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
-
->>>>>>> origin/master
 #pragma mark - Core Data
 +(void) saveCoreDataContext;
 
