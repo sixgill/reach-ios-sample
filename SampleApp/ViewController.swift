@@ -35,6 +35,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if UserDefaults.standard.bool(forKey: Constants.IS_SDK_RUNNING) {
             
             SGSDK.enable()
+            SGSDK.setMotionActivityEnabled(true)
             
             showEventsViewController()
         }
@@ -88,6 +89,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 // Enable SDK
                 SGSDK.enable(successHandler: {
+                    
+                    SGSDK.setMotionActivityEnabled(true)
                     
                     DispatchQueue.main.async {
                         
