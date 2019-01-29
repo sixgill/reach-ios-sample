@@ -118,7 +118,11 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
+<<<<<<< HEAD
 		WcMPafaFDjoGaMZi2EuxBHpY8R0=
+=======
+		XwUVNZZwiFw8LUzg3I3BpMd8i2I=
+>>>>>>> origin/master
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -174,11 +178,19 @@
 		</data>
 		<key>SixgillSDK.momd/SDK-Store.mom</key>
 		<data>
+<<<<<<< HEAD
 		guN+IS2enBxreX+uq4Fl+fNygZw=
 		</data>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<data>
 		AlAqpnoumlDDzyMAJmraFip95gI=
+=======
+		6WuKM3+AAxImWAX1i2KbsAYDjVQ=
+		</data>
+		<key>SixgillSDK.momd/VersionInfo.plist</key>
+		<data>
+		gOG52+GgqLl72tze//6IqI/hoQU=
+>>>>>>> origin/master
 		</data>
 		<key>any.proto</key>
 		<data>
@@ -547,11 +559,19 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			WcMPafaFDjoGaMZi2EuxBHpY8R0=
 			</data>
 			<key>hash2</key>
 			<data>
 			Me6Pn9i0AD0fWFHjarDZj+4ncIuRx6JlLBbSLq1nbtU=
+=======
+			XwUVNZZwiFw8LUzg3I3BpMd8i2I=
+			</data>
+			<key>hash2</key>
+			<data>
+			gbfgjuH3LntKpHIOxrScVyjJXkFsCowYZg4V0hyyumk=
+>>>>>>> origin/master
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
@@ -690,22 +710,38 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			guN+IS2enBxreX+uq4Fl+fNygZw=
 			</data>
 			<key>hash2</key>
 			<data>
 			olq96/F0DygJRAXt/molGM7RMdvTdLW+NJklg9za2Es=
+=======
+			6WuKM3+AAxImWAX1i2KbsAYDjVQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			li0fYcqz0meQoOs6F3Cu0eO/uWfzYs1bUo7MQ6RYyWA=
+>>>>>>> origin/master
 			</data>
 		</dict>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			AlAqpnoumlDDzyMAJmraFip95gI=
 			</data>
 			<key>hash2</key>
 			<data>
 			Z0ZkAkJj1O+xEAGNAWo83I/kQWvlVYV/rdpbwKK/dTE=
+=======
+			gOG52+GgqLl72tze//6IqI/hoQU=
+			</data>
+			<key>hash2</key>
+			<data>
+			cp9y1dijVFghuA22i3TYl78LyMxPNmZMi9bB83GUWbY=
+>>>>>>> origin/master
 			</data>
 		</dict>
 		<key>any.proto</key>
