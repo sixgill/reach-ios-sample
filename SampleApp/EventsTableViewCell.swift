@@ -31,7 +31,14 @@ class EventsTableViewCell: UITableViewCell {
             locationLabel.text = String(describing: location.latitude) + ", " + String(describing: location.longitude)
         }
         
-        errorLabel.text = String(sensorData.errorArray.count)
+        if (sensorData.errorArray.count > 0) {
+            var errorString = ""
+            for error in sensorData.errorArray as NSArray as! [SixgillSDK.Error] {
+                errorString += "Message: \(error.errorMessage!), Code: \(error.errorCode)\n"
+            }
+            errorLabel.text = errorString
+        }
+        
     }
 
 }
