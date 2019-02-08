@@ -40,10 +40,10 @@ let config = SGSDKConfigManager();
 config.ingressURL = Constants.urls[dropDownPicker.selectedRow(inComponent: 0)]
 config.shouldSendDataToServer = sendToServerSwitch.isOn
 
-var dict = ["phone": phone_number];
+var dict: NSMutableDictionary? = ["phone": phone_number];
 // some additional information can be added to aliases as well
 dict["organization"] = "sixgill"
-config.aliases = dict as? NSMutableDictionary;
+config.aliases = dict;
 
 
 SGSDK.sharedInstance()?.start(withAPIKey: apiKey, andConfig: config, andSuccessHandler: {
