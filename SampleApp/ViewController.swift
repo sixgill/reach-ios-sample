@@ -75,8 +75,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let config = SGSDKConfigManager();
         
         if let phone_number = phoneNumberTextField.text, phone_number.count > 0 {
-            let dict = ["phone_number": phone_number];
-            config.aliases = dict as? NSMutableDictionary;
+            let dict: NSMutableDictionary? = ["phone_number" : phone_number]
+            config.aliases = dict;
         }
         
         config.ingressURL = Constants.urls[dropDownPicker.selectedRow(inComponent: 0)]
